@@ -15,6 +15,35 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "loanType": {
+      "type": "string"
+    },
+    "answers": {
+      "type": "json"
+    },
+    "currentStep": {
+      "type": "integer"
+    },
+    "isComplete": {
+      "type": "boolean"
+    },
+    "score": {
+      "type": "integer"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "applicationStatus": {
+      "type": "enumeration",
+      "default": "draft",
+      "enum": [
+        "draft",
+        "submitted",
+        "under_review",
+        "approved",
+        "rejected"
+      ]
     }
   }
 }

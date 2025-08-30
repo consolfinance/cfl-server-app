@@ -385,9 +385,18 @@ export interface ApiLoanApplicationLoanApplication
     draftAndPublish: true;
   };
   attributes: {
+    answers: Schema.Attribute.JSON;
+    applicationStatus: Schema.Attribute.Enumeration<
+      ['draft', 'submitted', 'under_review', 'approved', 'rejected']
+    > &
+      Schema.Attribute.DefaultTo<'draft'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    currentStep: Schema.Attribute.Integer;
+    grade: Schema.Attribute.String;
+    isComplete: Schema.Attribute.Boolean;
+    loanType: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -395,6 +404,7 @@ export interface ApiLoanApplicationLoanApplication
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    score: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
