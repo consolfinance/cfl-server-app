@@ -396,6 +396,7 @@ export interface ApiLoanApplicationLoanApplication
     currentStep: Schema.Attribute.Integer;
     grade: Schema.Attribute.String;
     isComplete: Schema.Attribute.Boolean;
+    loanSlug: Schema.Attribute.String;
     loanType: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
