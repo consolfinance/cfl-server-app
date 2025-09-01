@@ -78,9 +78,24 @@ const updateUserApplication = async (ctx: Context) => {
 		ctx.internalServerError("Internal server error");
 	}
 };
+
+const getAllUserApplications = async (ctx: Context) => {
+	try {
+		const userId = ctx.state.user.id;
+		const applications = await strapi
+			.documents("api::loan-application.loan-application")
+			.findMany({ filters: { user: userId } });
+		ctx.send(applications);
+	} catch (error) {
+		console.error(error);
+		ctx.internalServerError("Internal server error");
+	}
+};
+
 export default {
 	updateMe,
 	createApplication,
 	getUserApplication,
 	updateUserApplication,
+	getAllUserApplications,
 };
