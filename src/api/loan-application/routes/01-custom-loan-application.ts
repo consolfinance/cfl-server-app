@@ -12,6 +12,11 @@ module.exports = {
 		},
 		{
 			method: "GET",
+			path: "/loan-applications/user",
+			handler: "01-custom-loan-application.getAllUserApplications",
+		},
+		{
+			method: "GET",
 			path: "/loan-applications/user/:id",
 			handler: "01-custom-loan-application.getUserApplication",
 		},
