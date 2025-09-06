@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_files_supporting_documents",
+  "info": {
+    "displayName": "Supporting Document",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "fileKey": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
