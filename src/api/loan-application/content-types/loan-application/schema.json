@@ -47,6 +47,11 @@
     },
     "loanSlug": {
       "type": "string"
+    },
+    "supportingDocuments": {
+      "type": "component",
+      "component": "files.supporting-document",
+      "repeatable": true
     }
   }
 }
