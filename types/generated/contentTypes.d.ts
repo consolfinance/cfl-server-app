@@ -406,6 +406,10 @@ export interface ApiLoanApplicationLoanApplication
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     score: Schema.Attribute.Integer;
+    supportingDocuments: Schema.Attribute.Component<
+      'files.supporting-document',
+      true
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
